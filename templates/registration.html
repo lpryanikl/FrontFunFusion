@@ -33,7 +33,8 @@
         </div>
 
         <div class="button-container">
-            <button class="custom-btn" type="button">Вход / Регистрация</button>            
+            <button class="custom-btn" onclick="redirectToLoginPage()">Вход</button>
+            <button class="custom-btn" onclick="redirectToRegistrationPage()">Регистрация</button>
         </div>
         
 
@@ -73,7 +74,7 @@
             <div>
                 <p class="email-info">Адрес&nbsp;эл. почты</p>
                 <div class="col email-input">
-                    <input type="text" placeholder="Введите логин">
+                    <input type="text" placeholder="Введите адрес эл. почты">
                 </div>
             </div>
 
@@ -124,7 +125,7 @@
                     var selectedRole = document.querySelector('.dropdown button').getAttribute('data-role');
                     console.log(selectedRole); // Добавляем console.log(selectedRole) для отображения выбранной роли в консоли
                     if (selectedRole === 'client') {
-                        window.location.href = "index.html"; // Путь к странице для клиента
+                        window.location.href = "complete_signupclient.html"; // Путь к странице для клиента
                     } else if (selectedRole === 'master') {
                         window.location.href = "complete_signupmaster.html"; // Путь к странице для мастера
                     } else {
@@ -132,8 +133,11 @@
                     }
                 }
             </script>
-                <button class="finish-button" onclick="changeLayout()">Продолжить</button>   
-            </div>
+            <button class="btn btn-primary continue-button" onclick="changeLayout()">Продолжить</button> 
+                
+  
+        </div>
+    </div>
 </body>
 
 </html>

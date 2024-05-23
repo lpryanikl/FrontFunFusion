@@ -16,8 +16,19 @@
         </div>
 
         <div class="button-container">
-            <button class="custom-btn" type="button">Вход / Регистрация</button>            
+            <button class="custom-btn" onclick="redirectToLoginPage()">Вход</button>
+            <button class="custom-btn" onclick="redirectToRegistrationPage()">Регистрация</button>
         </div>
+    
+        <script>
+            function redirectToLoginPage() {
+                window.location.href = "login.html"; // путь к странице входа
+            }
+    
+            function redirectToRegistrationPage() {
+                window.location.href = "registration.html"; // путь к странице регистрации
+            }
+        </script>
         
 
         <p class="header-title">Онлайн запись в городе Екатеринбург</p>
@@ -58,25 +69,34 @@
         
 
         <div>
-            <p class="custom-paragraph">
+            <p class="login">
                 <span>Логин или эл. почта</span>
             </p>
 
-            <div class="col custom-col">            
+            <div class="col input">      
+                <input type="text" placeholder="Введите логин">      
             </div>
         </div>
 
         <div>
-            <p class="custom-text1">
-                <span>Пароль</span>
-            </p>
-
-            <div class="col custom-col1">
-                <form method="post">
-                    <!-- {% csrf_token %}
-                    {{ form.as_p }} -->
-                    <button class="btn btn-primary custom-btn1">&#8658;</button>
-                </form>
+            <div>
+                <p class="password-info">Пароль</p>
+                <div class="col password-input">
+                    <input type="password" placeholder="Введите пароль">
+                    <!-- <form method="post"> -->
+                        <!-- {% csrf_token %}
+                        {{ form.as_p }} -->
+                    <!-- </form> -->
+                    <div class="button-container-str">
+                        <button class="btn btn-primary custom-btn1" onclick="redirectToPage()">&#8658;</button>
+                    </div>
+                
+                    <script>
+                        function redirectToPage() {
+                            window.location.href = "index.html"; // путь к странице входа
+                        }
+                    </script>
+                </div>
             </div>
         </div>
         
@@ -87,10 +107,17 @@
         <p class="first-time">
             Первый раз?
         </p>
-
-        <a href="#" class="custom-link">
-            Зарегистрироваться
-        </a>
+        
+        <div class="button-container">
+            <button class="custom-btnreg" onclick="redirectToRegistrationPage()"><u>Зарегистрироваться</u></button>
+        </div>
+    
+        <script>
+            function redirectToRegistrationPage() {
+                window.location.href = "registration.html"; // путь к странице регистрации
+            }
+        </script>
+        
     </div>
     <script src="assets/bootstrap/js/bootstrap.min.js">
 

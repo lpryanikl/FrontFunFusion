@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="ru">
 <head>
     <title>Завершение регистрации</title>
@@ -13,4 +13,97 @@
 </form>
 
 </body>
+</html> -->
+
+<!DOCTYPE html>
+<html data-bs-theme="light" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Регистрация Завершение мастер</title>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/complete_signupclient.css">
+</head>
+
+<body style="width: 100%;height: 100%;">
+    <div class="col gradient-col">
+        <div class="logo">
+            <img src="assets/img/logo.png" class="logo-img" alt="Logo">
+        </div>
+
+        <div class="button-container">
+            <button class="custom-btn" onclick="redirectToLoginPage()">Вход</button>
+            <button class="custom-btn" onclick="redirectToRegistrationPage()">Регистрация</button>
+        </div>
+    
+        <script>
+            function redirectToLoginPage() {
+                window.location.href = "login.html"; // путь к странице входа
+            }
+    
+            function redirectToRegistrationPage() {
+                window.location.href = "registration.html"; // путь к странице регистрации
+            }
+        </script>
+
+        <p class="header-title">Онлайн запись в городе Екатеринбург</p>
+        
+        
+        <div class="search-bar">
+            <p class="search-text">&nbsp;&nbsp;Усл</p>
+        </div>
+        
+        <div>
+            <img src="assets/img/tochki.png" class="dots-img" width="650" height="400">
+        </div>
+
+        <div>
+            <img src="assets/img/tochki.png" class="dots-img2" width="767" height="447">
+        </div>
+
+        <div>
+            <img src="assets/img/tochki2.png" class="dots-img5">
+            <img src="assets/img/tochki2.png" class="dots-img6">
+        </div>
+
+        <div>
+            <img src="assets/img/krug.png" class="circle-img1" width="741" height="340">
+            <img src="assets/img/krug.png" class="circle-img2" width="465" height="213">
+        </div>
+    </div>
+
+    <div class="col-xxl-10" style="height: 723px;width: 1920px;background: #ccc7c7;"> </div>
+    
+    <div class="custom-col">
+        <div>
+            <p class="registration-heading">Регистрация</p>
+            <div>
+                <p class="name-info">Ваше полное имя (ФИО)</p>
+                <div class="col name-input">
+                    <input type="text" placeholder="Введите ваше ФИО">
+                </div>
+            </div>
+            <div>
+                <p class="name-info-second">Ваш номер телефона</p>
+                <div class="col name-input">
+                    <input type="text" placeholder="Номер телефона (+7)">
+                </div>
+
+                <p class="name-info-second">ID телеграмм</p>
+                <div class="col name-input">
+                    <input type="text" placeholder="ID">
+                </div>
+            </div>
+            <button class="btn btn-primary finish-button" onclick="completeForm()">Завершить</button>
+    
+            <script>
+                function completeForm() {
+                    window.location.href = "index.html"; 
+                }
+            </script>   
+        </div>
+    </div>
+</body>
+
 </html>

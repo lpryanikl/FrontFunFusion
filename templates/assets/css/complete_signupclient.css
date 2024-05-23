@@ -1,11 +1,11 @@
+p {
+  font-size: 50px;
+}
+
 .gradient-col {
   width: 100%;
   height: 361px;
   background: linear-gradient(135deg, rgb(239,205,255), rgb(239,205,255) 8%, rgb(164,172,229) 48%, rgb(52,124,190));
-}
-
-p {
-  font-size: 50px;
 }
 
 logo {
@@ -35,7 +35,6 @@ logo {
   cursor: pointer;
 }
 
-
 .header-title {
   margin-top: 31px;
   margin-left: 532px;
@@ -58,7 +57,6 @@ logo {
 .search-text {
   font-size: 18px;
   padding: 6px 0;
-  margin: 0;
   color: rgb(145, 143, 143);
 }
 
@@ -69,10 +67,8 @@ logo {
   margin-top: -220px;
   margin-bottom: -80px;
   opacity: 0.25;
-  padding-left: 0;
   padding-bottom: 48px;
   margin-right: -134px;
-  padding-right: 0;
 }
 
 .dots-img2 {
@@ -81,11 +77,8 @@ logo {
   margin-bottom: -80px;
   opacity: 0.10;
   transform: translate(79px) rotateY(180deg) scale(1) skew(0deg);
-  padding-top: 0;
   padding-bottom: 80px;
   margin-top: -386px;
-  padding-right: 0;
-  padding-left: 0;
   margin-left: -204px;
   text-align: center;
 }
@@ -93,7 +86,6 @@ logo {
 .dots-img5, .dots-img6 {
   width: 128px;
   opacity: 0.05;
-  padding: 0;
   margin-bottom: -70px;
 }
 
@@ -109,7 +101,6 @@ logo {
 
 .circle-img1, .circle-img2 {
   opacity: 0.15;
-  padding: 0;
 }
 
 .circle-img1 {
@@ -128,36 +119,29 @@ logo {
   margin-bottom: 209px;
   margin-left: -5px;
 }
-
-.custom-style {
+.custom-col {
   border-radius: 25px;
   width: 600px;
-  height: 897px;
+  height: 697px;
   color: var(--bs-body-bg);
   background: var(--bs-body-bg);
-  padding-right: 0px;
-  margin-bottom: 0px;
   margin-top: -972px;
-  padding-bottom: 0px;
   padding-top: 62px;
   border-color: var(--bs-body-bg);
-  margin-right: 0px;
   padding-left: 22px;
   margin-left: 568px;
 }
 
-.registration-text {
+.registration-heading {
   height: 58px;
-  padding-top: 0px;
   margin-left: 130px;
   margin-bottom: 20px;
   margin-top: -37px;
-  padding-right: 0px;
   margin-right: 174px;
   color: rgb(0, 0, 0);
 }
 
-.email-info {
+.name-info {
   padding-bottom: 0px;
   font-size: 32px;
   margin-right: -9px;
@@ -167,7 +151,7 @@ logo {
   color: rgb(0, 0, 0);
 }
 
-.email-input {
+.name-input {
   width: 475px;
   height: 56px;
   border-radius: 25px;
@@ -177,7 +161,7 @@ logo {
   margin-left: 18px;
 }
 
-.email-input input {
+.name-input input {
   width: 100%;
   height: 100%;
   border: none;
@@ -188,152 +172,51 @@ logo {
   border-radius: 25px;
 }
 
-.login-info {
+.name-info-second {
   padding-bottom: 0px;
   font-size: 32px;
   margin-right: -9px;
   margin-left: 32px;
   margin-bottom: -5px;
-  margin-top: 14px;
-  color: rgb(0, 0, 0);
-}
-
-.login-input {
-  width: 475px;
-  height: 56px;
-  border-radius: 25px;
-  border-color: #D9D9D9;
-  background: #D9D9D9;
-  margin-top: 18px;
-  margin-left: 18px;
-  display: flex;
-  align-items: center;
-}
-
-.login-input input {
-  width: 100%;
-  height: 100%;
-  border: none;
-  background: transparent;
-  padding: 5px 10px;
-  font-size: 16px;
-  color: #000;
-  border-radius: 25px;
-}
-
-.password-info {
-  padding-bottom: 0px;
-  font-size: 32px;
-  margin-right: -9px;
-  margin-left: 32px;
-  margin-bottom: -5px;
-  margin-top: 14px;
-  color: rgb(0, 0, 0);
-}
-
-.password-input {
-  width: 475px;
-  height: 56px;
-  border-radius: 25px;
-  border-color: #D9D9D9;
-  background: #D9D9D9;
-  margin-top: 18px;
-  margin-left: 18px;
-}
-
-.password-input input {
-  width: 100%;
-  height: 100%;
-  border: none;
-  background: transparent;
-  padding: 5px 10px;
-  font-size: 16px;
-  color: #000;
-  border-radius: 25px;
-}
-
-.confirm-password-info {
-  padding-bottom: 0px;
-  font-size: 32px;
-  margin-right: -9px;
-  margin-left: 32px;
-  margin-bottom: -5px;
-  margin-top: 14px;
-  color: rgb(0, 0, 0);
-}
-
-.confirm-password-input {
-  width: 475px;
-  height: 56px;
-  border-radius: 25px;
-  border-color: #D9D9D9;
-  background: #D9D9D9;
-  margin-top: 18px;
-  margin-left: 18px;
-  display: flex;
-  align-items: center;
-}
-
-.confirm-password-input input {
-  width: 100%;
-  height: 100%;
-  border: none;
-  background: transparent;
-  padding: 5px 10px;
-  font-size: 16px;
-  color: #000;
-  border-radius: 25px;
-}
-
-.dropdown {
-  position: relative;
-  display: inline-block;
-  margin-left: 30px;
-  font-size: 30px;
   margin-top: 30px;
-  width: 207px;
+  color: rgb(0, 0, 0);
 }
 
-.dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: #f9f9f9;
-  min-width: 120px;
-  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
-  z-index: 1;
+.about {
+  font-size: 32px;
+  margin-right: -9px;
+  margin-left: 32px;
+  margin-bottom: -5px;
+  margin-top: 30px;
+  color: rgb(0, 0, 0);
 }
 
-.dropdown:hover .dropdown-content {
-  display: block;
-  animation: show 0.5s ease;
+.about-input {
+  width: 475px;
+  height: 156px;
+  border-radius: 25px;
+  border-color: #D9D9D9;
+  background: #D9D9D9;
+  margin-top: 18px;
+  margin-left: 18px;
 }
 
-@keyframes show {
-  from {opacity: 0;}
-  to {opacity: 1;}
+.about-input input {
+  width: 100%;
+  height: 100%;
+  border: none;
+  background: transparent;
+  padding: 5px 10px;
+  font-size: 16px;
+  color: #000;
+  border-radius: 25px;
 }
 
-.dropdown-content a {
-  display: block;
-  padding: 10px;
-  color: black;
-  text-decoration: none;
-  font-size: 24px;
-  transition: background-color 0.3s;
-}
-
-.dropdown-content a:hover {
-  background-color: #ccc;
-}
-
-.dropdown-content a.selected {
-  background-color: #f9f9f9;
-}
-
-.continue-button {
+.finish-button {
   width: 320px;
   height: 60px;
-  margin-top: 40px;
+  margin-bottom: 0px;
+  margin-top: 20px;
   font-size: 32px;
   border-radius: 25px;
   margin-left: 113px;
