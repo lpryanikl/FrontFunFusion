@@ -34,8 +34,27 @@
         <p class="header-title">Онлайн запись в городе Екатеринбург</p>
 
         
-        <div class="col search-input">      
-            <input type="text" placeholder="Услуга, компания или специалист">      
+        <div class="col search">
+            <select class="dropdown-search" id="category">
+                <option value="category1">Услуга</option>
+                <option value="category1">Маникюр</option>
+                <option value="category2">Эпиляция</option>
+                <option value="category3">Спа-процедуры</option>
+                <option value="category1">Массаж</option>
+            </select><input type="date" id="location" class="calendar" style="padding-bottom: 0px;padding-top: 0px;height: 44px;margin-top: 0px;border-width: 0px;border-top-style: none;border-right-width: 0.5px;border-right-color: var(--bs-emphasis-color);border-bottom-style: none;border-left: 1px none var(--bs-emphasis-color) ;"><select class="dropdown-metro" id="price" style="border-top-style: none;border-right-width: 1px;border-right-color: var(--bs-emphasis-color);border-bottom-style: none;border-left-style: none;">
+                <option value="price1">Метро</option>
+                <option value="price2">Метро</option>
+                <option value="price3">Метро</option>
+            </select><button class="button-search" style="padding-right: 0px;width: 176px;background: rgb(255, 173, 173);border-color: rgb(255,173,173);border-top-width: 3px;">Найти</button><script>
+                function search() {
+                    var category = document.getElementById("category").value;
+                    var location = document.getElementById("location").value;
+                    var price = document.getElementById("price").value;
+                    
+                    // Переход на другую страницу с сохранением выбора
+                    window.location.href = "results.html?category=" + category + "&location=" + location + "&price=" + price;
+                }
+            </script>
         </div>
         
         
@@ -58,13 +77,46 @@
         </div>
 
     </div>
-    <div class="col info-col" style="height: 723px;width: 100%;background: #ccc7c7;">
-        <p class="info-text">Информация</p>
-    </div>
-    
-    <script src="assets/bootstrap/js/bootstrap.min.js">
+    <div class="col info-col" style="height: 723px;width: 100%;background: #ffffff;">
+        <p class="info-text"><b>Развивайте свой бизнес вместе с нами</b></p>
+        <div class="col card-container">
+            <img src="assets/img/grafik.png" class="card-image">
+            <h1 class="card-title">Рост клиентской базы</h1>
+            <p class="card-text">
+                Если вы не используете онлайн-запись, вы упускаете более 52% клиентов, которые хотят записаться в нерабочее время или не могут позвонить в рабочее. Наши данные показывают, что с онлайн-записью 40% новых клиентов становятся постоянными и возвращаются более 5 раз.
+            </p>
+        </div>
 
+        <div style="width: 56px;height: 56px;">
+            <img src="assets/img/kolokol.png" style="width: 56px;height: 56px;margin-top: -601px;padding-bottom: 0px;margin-bottom: 133px;margin-left: 1173px;">
+            <h1 style="width: 226px;height: 34px;font-size: 20px;margin-left: 1097px;text-align: center;margin-top: -335px;font-weight: bold;">Меньше ложных<br>записей<br><br></h1>
+            <p style="font-size: 16px;width: 226px;height: 275px;line-height: 19.36px;text-align: center;color: #878787;margin-left: 1091px;margin-top: 18px;"><br>Ваше время – ваш главный ресурс, который приносит деньги. Неявка клиента – это потеря и времени, и денег. Вы можете сократить неявки на 35% благодаря автоматическим напоминаниям, что помогает вам сосредоточиться на росте и успехе вашего бизнеса.<br><br></p>
+        </div>
+
+        <div style="width: 92px;">
+            <img src="assets/img/time.png" style="width: 92px;height: 74px;margin-left: 532px;margin-bottom: 390px;margin-top: -453px;">
+            <h1 style="width: 226px;height: 34px;font-size: 20px;text-align: center;margin-left: 467px;margin-bottom: 0px;margin-top: -385px;font-weight: bold;">Меньше ложных<br>записей<br><br></h1>
+            <p style="font-size: 16px;width: 226px;height: 275px;line-height: 19.36px;text-align: center;color: #878787;margin-left: 466px;margin-top: 14px;"><br>Ваше время – ваш главный ресурс, который приносит деньги. Неявка клиента – это потеря и времени, и денег. Вы можете сократить неявки на 35% благодаря автоматическим напоминаниям, что помогает вам сосредоточиться на росте и успехе вашего бизнеса.<br><br></p>
+        </div>
+
+        <p class="info-text"><b style="margin-bottom: 0px;margin-top: 0px;">Основные возможности<br>Для клиента<br><br></b></p>
+        <div class="col" style="background: #FFFFFF;width: 300px;height: 287px;margin-top: 80px;margin-left: 736px;border-radius: 20px;box-shadow: 0px 12px 20px 8px #0000000D;"><img src="assets/img/strelka.png" style="width: 62px;height: 62px;margin-top: 25px;margin-left: 119px;">
+            <h1 style="width: 226px;height: 34px;font-size: 20px;margin-top: 23px;margin-left: 49px;text-align: center;font-weight: bold;">Удобная отмена<br>или перенос записи<br><br></h1>
+            <p style="font-size: 16px;width: 226px;height: 275px;line-height: 19.36px;margin-left: 41px;text-align: center;color: #878787;"><br>Легко отменяйте или переносите свои записи, чтобы всегда оставаться гибкими в своих планах.<br><br></p>
+        </div>
+
+        <div style="width: 56px;height: 56px;">
+            <img src="assets/img/kolokol2.png" style="width: 55px;height: 55px;padding-bottom: 0px;margin-bottom: 353px;margin-top: -271px;margin-left: 1177px;">
+            <h1 style="width: 226px;height: 34px;font-size: 20px;margin-left: 1097px;text-align: center;margin-top: -335px;font-weight: bold;">Напоминание о<br>предстоящих записях<br><br></h1>
+            <p style="font-size: 16px;width: 226px;height: 275px;line-height: 19.36px;text-align: center;color: #878787;margin-left: 1091px;margin-top: 18px;"><br>Получайте автоматические напоминания о предстоящих визитах, чтобы не забывать о своих планах и чувствовать себя уверенно.<br><br></p>
+        </div>
+        
+        <div style="width: 92px;">
+            <img src="assets/img/note.png" style="width: 55px;height: 52px;margin-bottom: 390px;margin-top: -315px;margin-left: 550px;">
+            <h1 style="width: 226px;height: 34px;font-size: 20px;text-align: center;margin-left: 467px;margin-bottom: 0px;margin-top: -371px;font-weight: bold;">Легкая и удобная<br>запись<br><br></h1>
+            <p style="font-size: 16px;width: 226px;height: 275px;line-height: 19.36px;text-align: center;color: #878787;margin-left: 466px;margin-top: 14px;"><br>Запись на услуги теперь проста и удобна, избавляя вас от лишних усилий и экономя ваше время.<br><br></p>
+        </div>
+    </div>
     </script>
 </body>
-
 </html>
