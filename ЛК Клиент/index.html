@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html data-bs-theme="light" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>ЛК Клиента</title>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/index.css">
+</head>
+
+<body style="width: 100%;height: 100%;">
+    <div class="col gradient-col" style="width:100%;">
+        <div class="logo"><img src="assets/img/logo.png" class="logo-img" alt="Logo"></div>
+        <div class="button-container"><button class="custom-btn">Вход</button><button class="custom-btn">Регистрация</button></div><script>
+            function redirectToLoginPage() {
+                window.location.href = "login.html"; // путь к странице входа
+            }
+    
+            function redirectToRegistrationPage() {
+                window.location.href = "registration.html"; // путь к странице регистрации
+            }
+        </script>
+        <p class="header-title">Онлайн запись в городе Екатеринбург</p>
+        <div class="col search"><select class="dropdown-search" id="category" style="border-top-style:none;border-right-width:1px;border-right-color:var(--bs-emphasis-color);border-bottom-style:none;border-left-style:none;">
+                <option value="category1">Услуга</option>
+                <option value="category1">Маникюр</option>
+                <option value="category2">Эпиляция</option>
+                <option value="category3">Спа-процедуры</option>
+                <option value="category1">Массаж</option>
+            </select><input type="date" id="location" class="calendar" style="padding-bottom:0px;padding-top:0px;height:44px;margin-top:0px;border-width:0px;border-top-style:none;border-right-width:0.5px;border-right-color:var(--bs-emphasis-color);border-bottom-style:none;border-left:1px none var(--bs-emphasis-color);"><select class="dropdown-metro" id="price" style="border-top-style:none;border-right-width:1px;border-right-color:var(--bs-emphasis-color);border-bottom-style:none;border-left-style:none;">
+                <option value="price1">Метро</option>
+                <option value="price2">Метро</option>
+                <option value="price3">Метро</option>
+            </select><button class="button-search" style="padding-right:0px;width:176px;background:rgb(255, 173, 173);border-color:rgb(255,173,173);border-top-width:3px;">Найти</button><script>
+                function search() {
+                    var category = document.getElementById("category").value;
+                    var location = document.getElementById("location").value;
+                    var price = document.getElementById("price").value;
+                    
+                    // Переход на другую страницу с сохранением выбора
+                    window.location.href = "results.html?category=" + category + "&location=" + location + "&price=" + price;
+                }
+            </script></div>
+        <div style="width: 100%;"><img src="assets/img/tochki.png" class="dots-img" style="margin-top:-252px;filter:blur(0px) brightness(0%) contrast(0%) grayscale(0%);transform:perspective(0px) translateX(-1265px) translateY(0px) rotateY(180deg) scale(1) scaleY(1) scaleZ(1);padding-bottom:0px;padding-right:0px;margin-right:-745px;margin-left:1144px;"><img src="assets/img/tochki.png" class="dots-img" style="filter: contrast(0%);transform: translateX(-59px) translateY(-64px);padding-bottom: 0px;padding-left: 0px;margin-right: -653px;padding-top: 0px;margin-top: -258px;padding-right: 0px;margin-left: 1309px;" width="650" height="400"></div>
+        <div><img src="assets/img/tochki.png" class="dots-img2"></div>
+        <div><img src="assets/img/tochki2.png" class="dots-img5" style="padding-top:0px;margin-top:-643px;"><img src="assets/img/tochki2.png" class="dots-img6" style="margin-top:-690px;"></div>
+        <div><img src="assets/img/krug.png" class="circle-img1" style="margin-top:-478px;margin-bottom:70px;"><img src="assets/img/krug.png" class="circle-img2" style="margin-bottom:340px;"></div>
+    </div>
+    <div class="col" style="margin-top: 12px;width: 100%;height: 1000px;">
+        <div style="width: 510px;height: 870px;margin-left: 592px;margin-top: 12px;">
+            <div class="col" style="height: 870px;border-radius: 20px;box-shadow: 0px 15px 50px 20px #0000000D;width: 100%;margin-top: 28px;color: #AAAAAA;">
+                <div style="width: 266px;margin-left: 22px;">
+                    <h1 style="font-size: 32px;width: 266px;height: 39px;margin-left: 114px;padding-top: 15px;color: #000000;">Личный кабинет</h1>
+                </div>
+                <div style="width: 125px;height: 125px;margin-top: 35px;margin-left: 197px;">
+                    <div class="col" style="width: 125px;height: 125px;border-radius: 100px;background: var(--bs-body-color);"></div>
+                </div>
+                <div style="width: 307px;height: 37px;margin-left: 76px;margin-top: 30px;">
+                    <p style="font-size: 20px;">Полное имя</p>
+                    <div class="col" style="width: 375px;height: 50px;border-radius: 25px;border: 1px solid var(--bs-emphasis-color) ;"></div>
+                </div>
+                <div style="width: 307px;height: 37px;margin-left: 76px;margin-top: 71px;">
+                    <p style="font-size: 20px;">Логин</p>
+                    <div class="col" style="width: 375px;height: 50px;border-radius: 25px;border: 1px solid var(--bs-emphasis-color) ;"></div>
+                </div>
+                <div style="width: 307px;height: 37px;margin-left: 76px;margin-top: 72px;">
+                    <p style="font-size: 20px;">Телефон</p>
+                    <div class="col" style="width: 375px;height: 50px;border-radius: 25px;border: 1px solid var(--bs-emphasis-color) ;"></div>
+                </div>
+                <div style="width: 307px;height: 37px;margin-left: 76px;margin-top: 77px;">
+                    <p style="font-size: 20px;">Пароль</p>
+                    <div class="col" style="width: 375px;height: 50px;border-radius: 25px;border: 1px solid var(--bs-emphasis-color) ;"></div>
+                </div>
+            </div>
+        </div><button class="btn btn-primary" type="button" style="background: var(--bs-body-bg);border-style: none;color: rgb(255,0,0);font-size: 32px;margin-top: -160px;margin-left: 791px;margin-bottom: 4px;">Выйти</button>
+    </div>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+</body>
+
+</html>
