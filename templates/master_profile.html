@@ -1,17 +1,17 @@
 <!DOCTYPE html>
-<html data-bs-theme="light" lang="en" style="width: 100%;">
+<html data-bs-theme="light" lang="en" style="width: 1920px;">
 
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>Вход</title>
+    <title>Личный кабинет мастера</title>
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="assets/css/login.css">
+    <link rel="stylesheet" href="assets/css/master_profile.css">
 </head>
 
 <body style="width: 100%;height: 100%;">
-    <div class="col gradient-col">
-        <div class="logo">
+    <div class="container-grad">
+        <div class="logo" style="margin-left: 0px ;">
             <img src="assets/img/logo.png" class="logo-img" alt="Logo">
         </div>
 
@@ -34,7 +34,7 @@
         <p class="header-title">Онлайн запись в городе Екатеринбург</p>
 
         <div class="search-bar">
-            <p class="search-text">&nbsp;&nbsp;Услу</p>
+            <p class="search-text">&nbsp;&nbsp;Услуга</p>
         </div>
         
         <div>
@@ -56,24 +56,27 @@
         </div>
 
     </div>
-    
-    <div class="container" style="width: 600px;height: 350px;margin-left: 576px;background: var(--bs-body-bg);border-radius: 25px;margin-top: -200px; box-shadow: 0px 12px 20px 8px #0000000D;">
-        <h2 style=" padding-top: 20px ;">Вход</h2>
-        <form method="post">
-            <input type="hidden" name="csrfmiddlewaretoken" value="y6kXJjkpTUZ0lT29DXxekOI8bhUtdRv1EUfgcri6ELrFVghviRZR7DOlMgQVEzSW">
-            
-            <div class="form-group">
-                <label for="id_email">Email:</label>
-                <input type="email" name="email" class="validate" placeholder="Введите почту" maxlength="320" required="" id="id_email">
-            </div>
-            <div class="form-group">
-                <label for="id_password">Пароль:</label>
-                <input type="password" name="password" placeholder="Введите пароль" required="" id="id_password">
-            </div>
-            <button type="submit" class="btn">Войти</button>
-        </form>
+    <div class="container">
+        <div class="profile-info">
+            <img src="" alt="Аватар мастера">
+            <h2>{{ master.full_name }}</h2>
+            <p>{{ master.bio }}</p>
+        </div>
+        <div class="services-list">
+            <h2>Услуги</h2>
+            {% for service in services %}
+                <div class="service-item">
+                    <img src="" alt="Фото услуги">
+                    <div class="service-details">
+                        <h3>{{ service.name }}</h3>
+                        <p style="font-size: 16px;">{{ service.description }}</p>
+                        <p style="font-size: 16px;">Продолжительность: {{ service.duration }}</p>
+                        <p style="font-size: 16px;">Цена: {{ service.price }} руб.</p>
+                    </div>
+                    <a href="{% url 'select_booking_date' service.id %}" class="book-btn">Записаться</a>
+                </div>
+            {% endfor %}
+        </div>
     </div>
-    </script>
 </body>
-
 </html>

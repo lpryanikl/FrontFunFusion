@@ -20,23 +20,6 @@ logo {
   z-index: -1;
 }
 
-.button-container {
-  display: flex;
-  justify-content: center;
-  margin-top: -182px;
-  margin-left: 350px;
-}
-
-.custom-btn {
-  margin: 5px;
-  padding: 10px 20px;
-  font-size: 16px;
-  border: none;
-  border-radius: 25px;
-  cursor: pointer;
-}
-
-
 .header-title {
   margin-top: 31px;
   margin-left: 532px;
@@ -221,3 +204,61 @@ logo {
   color: #878787;
 }
 
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  margin-top: -182px;
+  margin-left: 350px;
+}
+
+.custom-btn {
+  margin: 5px;
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+}
+
+.links a {
+  display: inline-block;
+  margin: 10px;
+  padding: 10px 20px;
+  background-color: #4CAF50;
+  color: white;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.links a:hover {
+  background-color: #45a049;
+}
+
+.masters-list {
+  margin-top: 30px;
+  text-align: left;
+}
+
+.master-item {
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+}
+
+.master-item a {
+  color: #4CAF50;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.master-item a:hover {
+  text-decoration: underline;
+}
+
+.master-item img {
+  max-width: 50px;
+  border-radius: 50%;
+  vertical-align: middle;
+  margin-right: 10px;
+}

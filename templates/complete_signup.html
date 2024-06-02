@@ -4,9 +4,9 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>Регистрация</title>
+    <title>Регистрация Завершение мастер</title>
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="assets/css/registration.css">
+    <link rel="stylesheet" href="assets/css/complete_signup.css">
 </head>
 
 <body style="width: 100%;height: 100%;">
@@ -19,7 +19,7 @@
             <button class="custom-btn" onclick="redirectToLoginPage()">Вход</button>
             <button class="custom-btn" onclick="redirectToRegistrationPage()">Регистрация</button>
         </div>
-
+    
         <script>
             function redirectToLoginPage() {
                 window.location.href = "login.html"; // путь к странице входа
@@ -29,20 +29,20 @@
                 window.location.href = "registration.html"; // путь к странице регистрации
             }
         </script>
-        
 
         <p class="header-title">Онлайн запись в городе Екатеринбург</p>
-
+        
+        
         <div class="search-bar">
             <p class="search-text">&nbsp;&nbsp;Усл</p>
         </div>
         
         <div>
-            <img src="assets/img/tochki.png" class="dots-img">
+            <img src="assets/img/tochki.png" class="dots-img" width="650" height="400">
         </div>
 
         <div>
-            <img src="assets/img/tochki.png" class="dots-img2">
+            <img src="assets/img/tochki.png" class="dots-img2" width="767" height="447">
         </div>
 
         <div>
@@ -51,42 +51,34 @@
         </div>
 
         <div>
-            <img src="assets/img/krug.png" class="circle-img1">
-            <img src="assets/img/krug.png" class="circle-img2">
+            <img src="assets/img/krug.png" class="circle-img1" width="741" height="340">
+            <img src="assets/img/krug.png" class="circle-img2" width="465" height="213">
         </div>
-
     </div>
+
     <div class="container" style="width: 600px;height: 610px;margin-left: 576px;background: var(--bs-body-bg);border-radius: 25px;margin-top: -200px; box-shadow: 0px 12px 20px 8px #0000000D;">
-        <h2 style="margin-left: 200px; padding-top: 20px;">Регистрация</h2>
+        <h2>Завершение регистрации</h2>
         <form method="post">
-            <input type="hidden" name="csrfmiddlewaretoken" value="letrHqgGZhX3FyEzgoRX26jNPH6LBgSIr2oKayenK8pIfVTVVijAPVp0qG2d2YfD">
+            <input type="hidden" name="csrfmiddlewaretoken" value="EhZQC3gYyHIPPnvzGfoidkh4NOnK3EvktX0aY3WkM5XFEtdaXlsTniJPaxjGiA3E">
             <div class="form-group">
-                <label for="id_email">Email:</label>
-                <input type="email" name="email" placeholder="Введите почту" maxlength="320" required="" id="id_email">
+                <label for="id_name">Имя:</label>
+                <input type="text" name="name" placeholder="Имя" required="" id="id_name">
             </div>
+            
             <div class="form-group">
-                <label for="id_username">Имя пользователя:</label>
-                <input type="text" name="username" placeholder="Введите имя пользователя" autofocus="" required="" id="id_username">
+                <label for="id_bio">О себе:</label>
+                <textarea name="bio" cols="40" rows="10" placeholder="О себе" required="" id="id_bio"></textarea>
             </div>
+            
             <div class="form-group">
-                <label for="id_password1">Пароль:</label>
-                <input type="password" name="password1" placeholder="Введите пароль" required="" id="id_password1">
+                <label for="id_phone">Контактный номер телефона:</label>
+                <input type="text" name="phone" placeholder="Номер телефона" required="" id="id_phone">
             </div>
-            <div class="form-group">
-                <label for="id_password2">Подтвердите пароль:</label>
-                <input type="password" name="password2" placeholder="Подтвердите пароль" required="" id="id_password2">
-            </div>
-            <div class="form-group">
-                <label for="id_account_type">Тип аккаунта:</label>
-                <select name="account_type" class="select" id="id_account_type">
-                    <option value="master">Мастер</option>
-
-                    <option value="client">Клиент</option>
-
-                </select>
-            </div>
-            <button type="submit" class="btn">Зарегистрироваться</button>
+            <button type="submit" class="btn">Завершить регистрацию</button>
         </form>
+        <div class="telegram-link">
+            <p style="font-size: 16px">Привязать Telegram: <a href="https://t.me/funfusion_bot?start=1f9cbd4cb6" target="_blank">Уникальная ссылка</a></p>
+        </div>
     </div>
 </body>
 

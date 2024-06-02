@@ -78,6 +78,22 @@
 
     </div>
     <div class="col info-col" style="height: 723px;width: 100%;background: #ffffff;">
+        <div class="links" style="margin-left: 1000px;">
+            <a href="{% url 'registration' %}">Регистрация</a>
+            <a href="{% url 'login' %}">Вход</a>
+        </div>
+        <div class="masters-list" style="margin-left: 500px;">
+            <h2>Список мастеров:</h2>
+            {% for master in masters %}
+            <div class="master-item">
+                <img src="" alt="Аватар мастера">
+                <a href="{% url 'master_profile' master.id %}">{{ master.full_name }}</a>
+                <p>{{ master.bio }}</p>
+            </div>
+            {% endfor %}
+        </div>
+
+
         <p class="info-text"><b>Развивайте свой бизнес вместе с нами</b></p>
         <div class="col card-container">
             <img src="assets/img/grafik.png" class="card-image">

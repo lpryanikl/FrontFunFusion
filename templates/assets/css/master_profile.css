@@ -1,7 +1,7 @@
-.gradient-col {
+.container-grad {
   width: 100%;
   height: 361px;
-  background: linear-gradient(135deg, rgb(239,205,255), rgb(239,205,255) 8%, rgb(164,172,229) 48%, rgb(52,124,190));
+  background: linear-gradient(135deg, rgb(239,205,255), rgb(164,172,229), rgb(52,124,190));
 }
 
 p {
@@ -80,11 +80,8 @@ logo {
   margin-bottom: -80px;
   opacity: 0.10;
   transform: translate(79px) rotateY(180deg) scale(1) skew(0deg);
-  padding-top: 0;
   padding-bottom: 80px;
   margin-top: -386px;
-  padding-right: 0;
-  padding-left: 0;
   margin-left: -204px;
   text-align: center;
 }
@@ -129,45 +126,130 @@ logo {
 }
 
 .container {
-  max-width: 600px;
-  height: 600px;
-  margin-top: -200px;
+  max-width: 800px;
+  margin: 50px auto;
+  padding: 20px;
   background-color: #fff;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   border-radius: 8px;
 }
 
-.form-group {
-  margin-bottom: 15px;
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
 }
 
-.form-group label {
+.profile-info, .services, .slots, .bookings {
+  margin-bottom: 20px;
+}
+
+.profile-info img {
+  max-width: 150px;
+  border-radius: 50%;
   display: block;
-  margin-bottom: 5px;
+  margin: 0 auto;
 }
 
-.form-group input,
-.form-group select {
+.profile-info h3 {
+  text-align: center;
+}
+
+table {
   width: 100%;
-  padding: 10px;
-  box-sizing: border-box;
+  border-collapse: collapse;
+}
+
+table, th, td {
   border: 1px solid #ccc;
-  border-radius: 4px;
 }
 
-.form-group .select {
-  width: 100%;
-}
-.btn {
-  width: 100%;
+th, td {
   padding: 10px;
+  text-align: left;
+}
+
+.actions {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.actions a {
+  text-decoration: none;
   background-color: #4CAF50;
   color: white;
-  border: none;
+  padding: 10px 20px;
   border-radius: 4px;
-  cursor: pointer;
+  margin: 0 5px;
 }
 
-.btn:hover {
+.actions a:hover {
+  background-color: #45a049;
+}
+
+.messages {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.messages .error-message {
+  color: red;
+}
+
+.messages .success-message {
+  color: green;
+}
+
+.profile-info {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.profile-info img {
+  max-width: 150px;
+  border-radius: 50%;
+}
+
+.profile-info h2 {
+  margin-top: 10px;
+}
+
+.services-list {
+  margin-top: 30px;
+}
+
+.service-item {
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+  display: flex;
+  align-items: center;
+}
+
+.service-item img {
+  max-width: 100px;
+  margin-right: 20px;
+}
+
+.service-details {
+  flex: 1;
+}
+
+.service-details h3 {
+  margin: 0 0 10px 0;
+}
+
+.service-details p {
+  margin: 0 0 5px 0;
+}
+
+.book-btn {
+  background-color: #4CAF50;
+  color: white;
+  text-decoration: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.book-btn:hover {
   background-color: #45a049;
 }
