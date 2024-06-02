@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Главная страница - Fun Fusion</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f2f2f2;
+        }
+
+        .container-top {
+            max-width: 1920px;
+            height: 361px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            background: linear-gradient(135deg, rgb(239,205,255), rgb(164,172,229), rgb(52,124,190));
+        }
+
+        .logo {
+            max-width: 282px; 
+            max-height: 282px;
+            margin-top: -70px;
+            margin-left: -650px;
+        }
+
+        .container {
+            max-width: 100%;
+            margin-top: -20px;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+        }
+        
+        .welcome {
+            color: #fff;
+            margin-top: -70px;
+        }
+
+        .links a {
+            display: inline-block;
+            margin: 10px;
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            transition: background-color 0.3s ease;
+        }
+
+        .links a:hover {
+            background-color: #45a049;
+        }
+
+        .masters-list {
+            margin-top: 30px;
+            text-align: left;
+        }
+
+        .master-item {
+            padding: 10px;
+            border-bottom: 1px solid #ccc;
+        }
+
+        .master-item a {
+            color: #4CAF50;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .master-item a:hover {
+            text-decoration: underline;
+        }
+
+        .master-item img {
+            max-width: 50px;
+            border-radius: 50%;
+            vertical-align: middle;
+            margin-right: 10px;
+        }
+
+        .nav-links {
+            margin-bottom: -60px;
+            margin-left: 300px;
+            font-size: 20px;
+        }
+
+        .nav-links a {
+            display: inline-block;
+            margin: 5px;
+            padding: 10px 20px;
+            background-color: #008CBA;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+        }
+
+        .nav-links a:hover {
+            background-color: #007B9A;
+        }
+        
+        .info-text {
+            text-align: center;
+            width: 439px;
+            height: 88px;
+            font-size: 36px;
+            line-height: 43.57px;
+            margin-top: 41px;
+            margin-left: 664px;
+        }
+
+        @media screen and (max-width: 600px) {
+            .container {
+                max-width: 100%;
+            }
+
+            .container-top {
+                max-width: 100%;
+                font-size: 10px;
+            }
+
+            .nav-links a,
+            .links a {
+                padding: 10px 15px;
+                margin: 5px;
+            }
+
+            .master-item img {
+                max-width: 30px;
+            }
+
+            .logo {
+                max-width: 150px; /* Уменьшаем ширину изображения */
+                margin-top: -55px; /* Корректируем вертикальное позиционирование */
+                margin-left: -220px; /* Корректируем горизонтальное позиционирование */
+                margin-bottom: 35px;
+            }
+        }
+        
+        .col-grafik {
+            background: #FFFFFF;
+            width: 300px;
+            height: 408px;
+            margin-top: 80px;
+            margin-left: 736px;
+            border-radius: 20px;
+            box-shadow: 0px 12px 20px 8px #0000000D;
+        }
+
+        .col-grafik img {
+            width: 60px;
+            height: 61px;
+            margin-top: 25px;
+            margin-left: 10px;
+        }
+
+        .col-grafik h1 {
+            width: 226px;
+            height: 34px;
+            font-size: 20px;
+            margin-top: 23px;
+            margin-left: 49px;
+        }
+
+        .col-grafik p {
+            margin-top: -20px;
+            font-size: 16px;
+            width: 226px;
+            height: 275px;
+            line-height: 19.36px;
+            margin-left: 41px;
+            text-align: center;
+            color: #878787;
+        }
+
+        .col-kolokol {
+            width: 226px;
+            height: 310px;
+            margin-left: 1091px;
+            margin-top: -375px;
+        }
+
+        .col-kolokol img {
+            width: 56px;
+            height: 56px;
+        }
+
+        .col-kolokol h1 {
+            width: 226px;
+            height: 34px;
+            font-size: 20px;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        .col-kolokol p {
+            font-size: 16px;
+            width: 226px;
+            height: 275px;
+            line-height: 19.36px;
+            text-align: center;
+            color: #878787;
+            margin-top: 18px;
+        }
+
+        .col-strelka {
+            background: #FFFFFF;
+            width: 300px;
+            height: 287px;
+            margin-top: 80px;
+            margin-left: 736px;
+            border-radius: 20px;
+            box-shadow: 0px 12px 20px 8px #0000000D;
+        }
+
+        .col-strelka img {
+            width: 62px;
+            height: 62px;
+            margin-top: 25px;
+        }
+
+        .col-strelka h1 {
+            width: 226px;
+            height: 34px;
+            font-size: 20px;
+            margin-top: 11px;
+            margin-left: 39px;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        .col-strelka p {
+            font-size: 16px;
+            width: 226px;
+            height: 275px;
+            line-height: 19.36px;
+            margin-left: 41px;
+            text-align: center;
+            color: #878787;
+        }
+
+        .col-time {
+            width: 226px;
+            height: 310px;
+            margin-left: 466px;
+            margin-top: -325px;
+        }
+
+        .col-time img {
+            width: 92px;
+            height: 74px;
+        }
+
+        .col-time h1 {
+            width: 226px;
+            height: 34px;
+            font-size: 20px;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        .col-time p {
+            font-size: 16px;
+            width: 226px;
+            height: 275px;
+            line-height: 19.36px;
+            text-align: center;
+            color: #878787;
+            margin-top: 14px;
+        }
+
+        .col-kolokol2 {
+            width: 56px;
+            height: 56px;
+        }
+
+        .col-kolokol2 img {
+            width: 55px;
+            height: 55px;
+            margin-bottom: 353px;
+            margin-top: -261px;
+            margin-left: 1177px;
+        }
+
+        .col-kolokol2 h1 {
+            width: 226px;
+            height: 34px;
+            font-size: 20px;
+            margin-left: 1097px;
+            text-align: center;
+            margin-top: -335px;
+            font-weight: bold;
+        }
+
+        .col-kolokol2 p {
+            font-size: 16px;
+            width: 226px;
+            height: 275px;
+            line-height: 19.36px;
+            text-align: center;
+            color: #878787;
+            margin-left: 1091px;
+            margin-top: 18px;
+        }
+
+        .col-note {
+            width: 92px;
+        }
+
+        .col-note img {
+            width: 55px;
+            height: 52px;
+            margin-bottom: 390px;
+            margin-top: -315px;
+            margin-left: 550px;
+        }
+
+        .col-note h1 {
+            width: 226px;
+            height: 34px;
+            font-size: 20px;
+            text-align: center;
+            margin-left: 467px;
+            margin-bottom: 0px;
+            margin-top: -371px;
+            font-weight: bold;
+        }
+
+        .col-note p {
+            font-size: 16px;
+            width: 226px;
+            height: 275px;
+            line-height: 19.36px;
+            text-align: center;
+            color: #878787;
+            margin-left: 466px;
+            margin-top: 14px;
+        }
+
+        .dots-img {
+            width: 650px;
+            height: 400px;
+            opacity: 0.25;
+            margin-top: -218px;
+            filter:contrast(0%);
+            transform: translateX(-1265px) rotateY(180deg);
+            margin-left: 1044px;
+        }
+
+        
+    </style>
+</head>
+
+<body>
+    <div class="container-top">
+        <div class="nav-links">
+            <a href="{% url 'index' %}">Домой</a>
+            <a href="{% url 'log_out' %}">Выход</a>
+        </div>
+        <div>
+            <img src="img/logo.png" class="logo">
+            <h1 class="welcome" style="padding-bottom: 20px;">Онлайн запись в городе Екатеринбург</h1>
+        </div>
+        <div>
+            <img src="img/tochki.png" class="dots-img">
+        </div>
+        <!-- Здесь можно добавить изображения или другие элементы -->
+    </div>
+    <div class="container">
+        <!-- <p>Здесь вы можете зарегистрироваться или войти в аккаунт, чтобы ознакомиться с возможностями продукта</p> -->
+        <div class="links">
+            <a href="{% url 'registration' %}">Регистрация</a>
+            <a href="{% url 'login' %}">Вход</a>
+        </div>
+        <div class="masters-list">
+            <h2>Список мастеров:</h2>
+            {% for master in masters %}
+            <div class="master-item">
+                <img src="" alt="Аватар мастера">
+                <a href="{% url 'master_profile' master.id %}">{{ master.full_name }}</a>
+                <p>{{ master.bio }}</p>
+            </div>
+            {% endfor %}
+        </div>
+        <p class="info-text"><b>Развивайте свой бизнес вместе с нами</b></p>
+
+        <div class="col-grafik">
+            <img src="img/grafik.png">
+            <h1>Рост клиентской базы</h1>
+            <p>Если вы не используете онлайн-запись, вы упускаете более 52% клиентов, которые хотят записаться в нерабочее время или не могут позвонить в рабочее. Наши данные показывают, что с онлайн-записью 40% новых клиентов становятся постоянными и возвращаются более 5 раз.</p>
+        </div>
+
+        <div class="col-kolokol">
+            <img src="img/kolokol.png">
+            <h1>Меньше ложных записей</h1>
+            <p>Ваше время – ваш главный ресурс, который приносит деньги. Неявка клиента – это потеря и времени, и денег. Вы можете сократить неявки на 35% благодаря автоматическим напоминаниям, что помогает вам сосредоточиться на росте и успехе вашего бизнеса.</p>
+        </div>
+        
+        <div class="col-time">
+            <img src="img/time.png">
+            <h1>Меньше ложных записей</h1>
+            <p>Ваше время – ваш главный ресурс, который приносит деньги. Неявка клиента – это потеря и времени, и денег. Вы можете сократить неявки на 35% благодаря автоматическим напоминаниям, что помогает вам сосредоточиться на росте и успехе вашего бизнеса.</p>
+        </div>        
+        
+        <p class="info-text" style="margin-top: 120px;"><b>Основные возможности<br>Для клиента<br><br></b></p>
+
+        <div class="col-strelka">
+            <img src="img/strelka.png">
+            <h1>Удобная отмена или перенос записи</h1>
+            <p>Легко отменяйте или переносите свои записи, чтобы всегда оставаться гибкими в своих планах.</p>
+        </div>
+
+        <div class="col-kolokol2">
+            <img src="img/kolokol2.png">
+            <h1>Напоминание о предстоящих записях</h1>
+            <p>Получайте автоматические напоминания о предстоящих визитах, чтобы не забывать о своих планах и чувствовать себя уверенно.</p>
+        </div>        
+
+
+        <div class="col-note">
+            <img src="img/note.png">
+            <h1>Легкая и удобная запись</h1>
+            <p>Запись на услуги теперь проста и удобна, избавляя вас от лишних усилий и экономя ваше время.</p>
+        </div>        
+    </div>
+</body>
+
+</html>

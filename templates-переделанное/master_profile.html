@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Профиль мастера - Fun Fusion</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f2f2f2;
+        }
+        
+        .container-top {
+            max-width: 100%;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            background: linear-gradient(135deg, rgb(239,205,255), rgb(164,172,229), rgb(52,124,190));
+        }
+
+        .logo {
+            max-width: 282px; 
+            max-height: 282px;
+            margin-top: -150px;
+            margin-left: -650px;
+        }
+
+        .welcome {
+            color: #fff;
+            margin-top: -70px;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        .profile-info {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .profile-info img {
+            max-width: 150px;
+            border-radius: 50%;
+        }
+
+        .profile-info h2 {
+            margin-top: 10px;
+        }
+
+        .services-list {
+            margin-top: 30px;
+        }
+
+        .service-item {
+            padding: 10px;
+            border-bottom: 1px solid #ccc;
+            display: flex;
+            align-items: center;
+        }
+
+        .service-item img {
+            max-width: 100px;
+            margin-right: 20px;
+        }
+
+        .service-details {
+            flex: 1;
+        }
+
+        .service-details h3 {
+            margin: 0 0 10px 0;
+        }
+
+        .service-details p {
+            margin: 0 0 5px 0;
+        }
+
+        .book-btn {
+            background-color: #4CAF50;
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            transition: background-color 0.3s ease;
+        }
+
+        .book-btn:hover {
+            background-color: #45a049;
+        }
+
+        .nav-links {
+            margin-bottom: 20px;
+            margin-left: 300px;
+            font-size: 20px;
+        }
+
+        .nav-links a {
+            display: inline-block;
+            margin: 5px;
+            padding: 10px 20px;
+            background-color: #008CBA;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+        }
+
+        .nav-links a:hover {
+            background-color: #007B9A;
+        }
+
+        @media screen and (max-width: 600px) {
+            .container {
+                max-width: 100%;
+                font-size: 20px;
+            }
+
+            .container-top {
+                max-width: 100%;
+                font-size: 20px;
+            }
+
+            .nav-links a,
+            .links a {
+                margin-left: 100px;
+                width: 200px;
+            }
+
+            .master-item img {
+                max-width: 30px;
+            }
+
+            .logo {
+                max-width: 350px; /* Уменьшаем ширину изображения */
+                margin-top: -190px; /* Корректируем вертикальное позиционирование */
+                margin-left: -620px; /* Корректируем горизонтальное позиционирование */
+                margin-bottom: -15px;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="container-top">
+    <div class="nav-links">
+        <a href="{% url 'index' %}">Домой</a>
+        <a href="{% url 'log_out' %}">Выход</a>
+    </div>
+    <div>
+        <img src="img/logo.png" class="logo">
+        <h1 class="welcome" style="padding-bottom: 24px;">Онлайн запись в городе Екатеринбург</h1>
+    </div>
+    <!-- Здесь можно добавить изображения или другие элементы -->
+</div>
+<div class="container">
+    <div class="profile-info">
+        <img src="" alt="Аватар мастера">
+        <h2>{{ master.full_name }}</h2>
+        <p>{{ master.bio }}</p>
+    </div>
+    <div class="services-list">
+        <h2>Услуги</h2>
+        {% for service in services %}
+            <div class="service-item">
+                <img src="" alt="Фото услуги">
+                <div class="service-details">
+                    <h3>{{ service.name }}</h3>
+                    <p>{{ service.description }}</p>
+                    <p>Продолжительность: {{ service.duration }}</p>
+                    <p>Цена: {{ service.price }} руб.</p>
+                </div>
+                <a href="{% url 'select_booking_date' service.id %}" class="book-btn">Записаться</a>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+</body>
+</html>

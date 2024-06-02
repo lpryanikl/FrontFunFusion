@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Личный кабинет мастера - Fun Fusion</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f2f2f2;
+        }
+
+        .container-top {
+            max-width: 100%;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            background: linear-gradient(135deg, rgb(239,205,255), rgb(164,172,229), rgb(52,124,190));
+        }
+
+        .logo {
+            max-width: 282px; 
+            max-height: 282px;
+            margin-top: -150px;
+            margin-left: -650px;
+        }
+
+        .welcome {
+            color: #fff;
+            margin-top: -70px;
+        }
+
+        .container {
+            max-width: 100%;
+            margin-top: -20px;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .profile-info, .services, .slots, .bookings {
+            margin-bottom: 20px;
+        }
+
+        .profile-info img {
+            max-width: 150px;
+            border-radius: 50%;
+            display: block;
+            margin: 0 auto;
+        }
+
+        .profile-info h3 {
+            text-align: center;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        table, th, td {
+            border: 1px solid #ccc;
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+
+        .actions {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .actions a {
+            text-decoration: none;
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 4px;
+            margin: 0 5px;
+        }
+
+        .actions a:hover {
+            background-color: #45a049;
+        }
+
+        .messages {
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+        .messages .error-message {
+            color: red;
+        }
+
+        .messages .success-message {
+            color: green;
+        }
+
+        .nav-links {
+            margin-bottom: 20px;
+            margin-left: 300px;
+            font-size: 20px;
+        }
+
+        .nav-links a {
+            display: inline-block;
+            margin: 5px;
+            padding: 10px 20px;
+            background-color: #008CBA;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+        }
+
+        .nav-links a:hover {
+            background-color: #007B9A;
+        }
+
+        @media screen and (max-width: 600px) {
+            .container {
+                max-width: 100%;
+                font-size: 20px;
+            }
+
+            .container-top {
+                max-width: 100%;
+                font-size: 30px;
+            }
+
+            .nav-links a,
+            .links a {
+                padding: 10px 15px;
+                margin: 5px;
+            }
+
+            .master-item img {
+                max-width: 30px;
+            }
+
+            .logo {
+                max-width: 350px; /* Уменьшаем ширину изображения */
+                margin-top: -150px; /* Корректируем вертикальное позиционирование */
+                margin-left: -620px; /* Корректируем горизонтальное позиционирование */
+                margin-bottom: 35px;
+            }
+
+        }
+    </style>
+</head>
+<body>
+<div class="container-top">
+    <div class="nav-links">
+        <a href="{% url 'index' %}">Домой</a>
+        <a href="{% url 'log_out' %}">Выход</a>
+    </div>
+    <div>
+        <img src="img/logo.png" class="logo">
+        <h1 class="welcome"  style="padding-bottom: 20px;">Онлайн запись в городе Екатеринбург</h1>
+    </div>
+    <!-- Здесь можно добавить изображения или другие элементы -->
+</div>
+<div class="container">
+    <h2>Личный кабинет мастера</h2>
+    <div class="profile-info">
+        <img src="" alt="Аватар мастера">
+        <h3>{{ user.master.full_name }}</h3>
+        <p>Email: {{ user.email }}</p>
+        <p >Телефон: {{ user.master.phone }}</p>
+        <p>Telegram ID: {{ user.master.telegram_id }}</p>
+        <p>О себе: {{ user.master.bio }}</p>
+    </div>
+    <div class="messages">
+        {% if messages %}
+            {% for message in messages %}
+                <div class="{{ message.tags }}-message">{{ message }}</div>
+            {% endfor %}
+        {% endif %}
+    </div>
+    <div class="actions" >
+        <a href="{% url 'add_service' %}">Добавить услугу</a>
+        <a href="{% url 'add_slot' %}">Добавить слот</a>
+    </div>
+    <div class="services">
+        <h3>Услуги</h3>
+        <table>
+            <thead>
+            <tr style="font-size: 20px;">
+                <th>Название</th>
+                <th>Описание</th>
+                <th>Длительность</th>
+                <th>Цена</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for service in services %}
+                <tr style="font-size: 20px;">
+                    <td>{{ service.name }}</td>
+                    <td>{{ service.description }}</td>
+                    <td>{{ service.duration }}</td>
+                    <td>{{ service.price }}</td>
+                    <td><a href="{% url 'remove_service' service.id %}">Удалить</a></td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    <div class="slots">
+        <h3>Доступные слоты</h3>
+        <table>
+            <thead>
+            <tr  style="font-size: 20px;">
+                <th>Дата</th>
+                <th>Начало</th>
+                <th>Конец</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for slot in slots %}
+                <tr  style="font-size: 20px;">
+                    <td>{{ slot.day }}</td>
+                    <td>{{ slot.start_time }}</td>
+                    <td>{{ slot.end_time }}</td>
+                    <td><a href="{% url 'remove_slot' slot.id %}">Удалить</a></td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    <div class="bookings">
+        <h3>Грядущие записи</h3>
+        <table>
+            <thead>
+            <tr  style="font-size: 20px;">
+                <th>Услуга</th>
+                <th>Клиент</th>
+                <th>Дата и время</th>
+                <th>Статус</th>
+                <th>Действие</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for booking in bookings %}
+                <tr>
+                    <td>{{ booking.service.name }}</td>
+                    <td>{{ booking.client.full_name }}</td>
+                    <td>{{ booking.start_time }} - {{ booking.end_time }}</td>
+                    <td>{{ booking.get_status_display }}</td>
+                    <td><a href="{% url 'cancel_booking' booking.id %}" class="btn">Отменить</a></td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+</body>
+</html>

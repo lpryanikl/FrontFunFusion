@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Завершение регистрации - Fun Fusion</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f2f2f2;
+        }
+
+        .container-top {
+            max-width: 100%;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            background: linear-gradient(135deg, rgb(239,205,255), rgb(164,172,229), rgb(52,124,190));
+        }
+
+        .logo {
+            max-width: 282px; 
+            max-height: 282px;
+            margin-top: -130px;
+            margin-left: -650px;
+        }
+
+        .welcome {
+            color: #fff;
+            margin-top: -70px;
+        }
+
+        .nav-links {
+            text-align: center;
+            margin-left: 300px;
+            font-size: 20px;
+        }
+
+        .nav-links a {
+            display: inline-block;
+            margin: 5px;
+            padding: 10px 20px;
+            background-color: #008CBA;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+        }
+
+        .container {
+            max-width: 400px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 10px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        .btn {
+            width: 100%;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .btn:hover {
+            background-color: #45a049;
+        }
+        .telegram-link {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .telegram-link a {
+            color: #0088cc;
+            text-decoration: none;
+        }
+        .telegram-link a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container-top">
+        <div class="nav-links">
+            <a href="{% url 'index' %}">Домой</a>
+        </div>
+        <div>
+            <img src="img/logo.png" class="logo">
+            <h1 class="welcome" style="padding-bottom: 20px;">Онлайн запись в городе Екатеринбург</h1>
+        </div>
+        <!-- Здесь можно добавить изображения или другие элементы -->
+    </div>
+    <div class="container">
+        <h2>Завершение регистрации</h2>
+        <form method="post">
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="id_name">Имя:</label>
+                {{ form.name }}
+            </div>
+            {% if form.bio %}
+                <div class="form-group">
+                    <label for="id_bio">О себе:</label>
+                    {{ form.bio }}
+                </div>
+            {% endif %}
+            <div class="form-group">
+                <label for="id_phone">Контактный номер телефона:</label>
+                {{ form.phone }}
+            </div>
+            <button type="submit" class="btn">Завершить регистрацию</button>
+        </form>
+        <div class="telegram-link">
+            <p>Привязать Telegram: <a href="{{ link }}" target="_blank">Уникальная ссылка</a></p>
+        </div>
+    </div>
+</body>
+</html>
