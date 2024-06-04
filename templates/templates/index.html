@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html data-bs-theme="light" lang="en" style="width: 1920px;">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Главная</title>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/index.css">
+</head>
+
+<body style="width: 100%;height: 100%;">
+    <div class="col gradient-col">
+        <div class="logo">
+            <img src="assets/img/logo.png" class="logo-img" alt="Logo">
+        </div>
+
+        <div class="button-container">
+            <div class="links">
+                <a href="{% url 'registration' %}">Регистрация</a>
+                <a href="{% url 'login' %}">Вход</a>
+            </div>
+        </div>
+    
+        <script>
+            function redirectToLoginPage() {
+                window.location.href = "login.html"; // путь к странице входа
+            }
+    
+            function redirectToRegistrationPage() {
+                window.location.href = "registration.html"; // путь к странице регистрации
+            }
+        </script>
+        
+
+        <p class="header-title">Онлайн запись в городе Екатеринбург</p>
+        
+        
+        <div>
+            <img src="assets/img/tochki.png" class="dots-img">
+        </div>
+
+        <div>
+            <img src="assets/img/tochki.png" class="dots-img2">
+        </div>
+
+        <div>
+            <img src="assets/img/tochki2.png" class="dots-img5">
+            <img src="assets/img/tochki2.png" class="dots-img6">
+        </div>
+
+        <div>
+            <img src="assets/img/krug.png" class="circle-img1">
+            <img src="assets/img/krug.png" class="circle-img2">
+        </div>
+
+    </div>
+
+    <div class="container" style="margin-left: 210px; margin-bottom: 50px; margin-top: 20px;">
+        <div class="masters-list">
+            <h2 style="text-align: center;">Список мастеров:</h2>
+            {% for master in masters %}
+            <div class="master-item">
+                <img src="" alt="Аватар мастера">
+                <a href="{% url 'master_profile' master.id %}">{{ master.full_name }}</a>
+                <p>{{ master.bio }}</p>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+    
+
+    <div class="container">
+        <p class="info-text">
+            <b>Развивайте свой бизнес вместе с нами</b>
+        </p>
+
+        <div class="col-grafik">
+            <img src="assets/img/grafik.png">
+            <h1>Рост клиентской базы</h1>
+            <p>Если вы не используете онлайн-запись, вы упускаете более 52% клиентов, которые хотят записаться в нерабочее время или не могут позвонить в рабочее. Наши данные показывают, что с онлайн-записью 40% новых клиентов становятся постоянными и возвращаются более 5 раз.</p>
+        </div>
+
+        <div class="col-kolokol">
+            <img src="assets/img/kolokol.png">
+            <h1>Меньше ложных записей</h1>
+            <p>Ваше время – ваш главный ресурс, который приносит деньги. Неявка клиента – это потеря и времени, и денег. Вы можете сократить неявки на 35% благодаря автоматическим напоминаниям, что помогает вам сосредоточиться на росте и успехе вашего бизнеса.</p>
+        </div>
+        
+        <div class="col-time">
+            <img src="assets/img/time.png">
+            <h1>Меньше ложных записей</h1>
+            <p>Ваше время – ваш главный ресурс, который приносит деньги. Неявка клиента – это потеря и времени, и денег. Вы можете сократить неявки на 35% благодаря автоматическим напоминаниям, что помогает вам сосредоточиться на росте и успехе вашего бизнеса.</p>
+        </div>        
+        
+        <p class="info-text" style="margin-top: 120px;"><b>Основные возможности<br>Для клиента<br><br></b></p>
+
+        <div class="col-strelka">
+            <img src="assets/img/strelka.png">
+            <h1>Удобная отмена или перенос записи</h1>
+            <p>Легко отменяйте или переносите свои записи, чтобы всегда оставаться гибкими в своих планах.</p>
+        </div>
+
+        <div class="col-kolokol2">
+            <img src="assets/img/kolokol2.png">
+            <h1>Напоминание о предстоящих записях</h1>
+            <p>Получайте автоматические напоминания о предстоящих визитах, чтобы не забывать о своих планах и чувствовать себя уверенно.</p>
+        </div>        
+
+
+        <div class="col-note">
+            <img src="assets/img/note.png">
+            <h1>Легкая и удобная запись</h1>
+            <p>Запись на услуги теперь проста и удобна, избавляя вас от лишних усилий и экономя ваше время.</p>
+        </div>        
+    </div>
+</body>
+</html>

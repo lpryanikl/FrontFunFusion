@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html data-bs-theme="light" lang="en" style="width: 1920px;">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Личный кабинет мастера</title>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/master_me.css">
+</head>
+
+<body style="width: 100%;height: 100%;">
+    <div class="gradient-col">
+        <div class="logo" >
+            <img src="assets/img/logo.png" class="logo-img" alt="Logo">
+        </div>
+
+        <div class="button-container">
+            <div class="nav-links">
+                <a href="{% url 'index' %}">Домой</a>
+                <a href="{% url 'log_out' %}">Выход</a>
+            </div>      
+        </div>
+
+        <p class="header-title">Онлайн запись в городе Екатеринбург</p>
+        
+        <div>
+            <img src="assets/img/tochki.png" class="dots-img" width="650" height="400">
+        </div>
+
+        <div>
+            <img src="assets/img/tochki.png" class="dots-img2" width="767" height="447">
+        </div>
+
+        <div>
+            <img src="assets/img/tochki2.png" class="dots-img5">
+            <img src="assets/img/tochki2.png" class="dots-img6">
+        </div>
+
+        <div>
+            <img src="assets/img/krug.png" class="circle-img1" width="741" height="340">
+            <img src="assets/img/krug.png" class="circle-img2" width="465" height="213">
+        </div>
+
+    </div>
+    <div class="container" style="width: 600px;margin-bottom: 200px; margin-left: 676px;">
+        <h2 style="padding-top: 20px;">Личный кабинет мастера</h2>
+        <div class="profile-info">
+            <img src="" alt="Аватар мастера">
+            <h3>{{ user.master.full_name }}</h3>
+            <p style="font-size: 24px;">Email: {{ user.email }}</p>
+            <p style="font-size: 24px;">Телефон: {{ user.master.phone }}</p>
+            <p style="font-size: 24px;">Telegram ID: {{ user.master.telegram_id }}</p>
+            <p style="font-size: 24px;">О себе: {{ user.master.bio }}</p>
+        </div>
+        <div class="messages">
+            {% if messages %}
+                {% for message in messages %}
+                    <div class="{{ message.tags }}-message">{{ message }}</div>
+                {% endfor %}
+            {% endif %}
+        </div>
+    </div>
+
+    <div class="container" style="width: 1000px; height: 100%;padding-top: 10px; margin-top: -150px; padding-bottom: 50px;">
+        <div class="services">
+            <h3>Услуги</h3>
+            <div class="actions">
+                <a href="{% url 'add_service' %}">Добавить услугу</a>
+            </div>
+            <table>
+                <thead>
+                <tr style="font-size: 20px;">
+                    <th>Название</th>
+                    <th>Описание</th>
+                    <th>Длительность</th>
+                    <th>Цена</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for service in services %}
+                    <tr style="font-size: 20px;">
+                        <td>{{ service.name }}</td>
+                        <td>{{ service.description }}</td>
+                        <td>{{ service.duration }}</td>
+                        <td>{{ service.price }}</td>
+                        <td><a href="{% url 'remove_service' service.id %}">Удалить</a></td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        <div class="slots">
+            <h3>Доступные слоты</h3>
+            <div class="actions">
+                <a href="{% url 'add_slot' %}">Добавить слот</a>
+            </div>
+            <table>
+                <thead>
+                <tr  style="font-size: 20px;">
+                    <th>Дата</th>
+                    <th>Начало</th>
+                    <th>Конец</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for slot in slots %}
+                    <tr  style="font-size: 20px;">
+                        <td>{{ slot.day }}</td>
+                        <td>{{ slot.start_time }}</td>
+                        <td>{{ slot.end_time }}</td>
+                        <td><a href="{% url 'remove_slot' slot.id %}">Удалить</a></td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        <div class="bookings">
+            <h3>Грядущие записи</h3>
+            <table>
+                <thead>
+                <tr  style="font-size: 20px;">
+                    <th>Услуга</th>
+                    <th>Клиент</th>
+                    <th>Дата и время</th>
+                    <th>Статус</th>
+                    <th>Действие</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for booking in bookings %}
+                    <tr>
+                        <td>{{ booking.service.name }}</td>
+                        <td>{{ booking.client.full_name }}</td>
+                        <td>{{ booking.start_time }} - {{ booking.end_time }}</td>
+                        <td>{{ booking.get_status_display }}</td>
+                        <td><a href="{% url 'cancel_booking' booking.id %}" class="btn">Отменить</a></td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>

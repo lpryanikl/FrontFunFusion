@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html data-bs-theme="light" lang="en" style="width: 1920px;">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Личный кабинет мастера</title>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/master_profile.css">
+</head>
+
+<body style="width: 100%;height: 100%;">
+    <div class="container-grad">
+        <div class="logo" style="margin-left: 0px ;">
+            <img src="assets/img/logo.png" class="logo-img" alt="Logo">
+        </div>
+
+        <div class="button-container">
+            <div class="nav-links">
+                <a href="{% url 'index' %}">Домой</a>
+                <a href="{% url 'log_out' %}">Выход</a>
+            </div>      
+        </div>
+
+        <p class="header-title">Онлайн запись в городе Екатеринбург</p>
+        
+        <div>
+            <img src="assets/img/tochki.png" class="dots-img" width="650" height="400">
+        </div>
+
+        <div>
+            <img src="assets/img/tochki.png" class="dots-img2" width="767" height="447">
+        </div>
+
+        <div>
+            <img src="assets/img/tochki2.png" class="dots-img5">
+            <img src="assets/img/tochki2.png" class="dots-img6">
+        </div>
+
+        <div>
+            <img src="assets/img/krug.png" class="circle-img1" width="741" height="340">
+            <img src="assets/img/krug.png" class="circle-img2" width="465" height="213">
+        </div>
+
+    </div>
+    <div class="container">
+        <div class="profile-info">
+            <img src="" alt="Аватар мастера">
+            <h2>{{ master.full_name }}</h2>
+            <p>{{ master.bio }}</p>
+        </div>
+        <div class="services-list">
+            <h2>Услуги</h2>
+            {% for service in services %}
+                <div class="service-item">
+                    <img src="" alt="Фото услуги">
+                    <div class="service-details">
+                        <h3>{{ service.name }}</h3>
+                        <p style="font-size: 16px;">{{ service.description }}</p>
+                        <p style="font-size: 16px;">Продолжительность: {{ service.duration }}</p>
+                        <p style="font-size: 16px;">Цена: {{ service.price }} руб.</p>
+                    </div>
+                    <a href="{% url 'select_booking_date' service.id %}" class="book-btn">Записаться</a>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</body>
+</html>

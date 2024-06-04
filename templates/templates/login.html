@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html data-bs-theme="light" lang="en" style="width: 100%;">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Вход</title>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/login.css">
+</head>
+
+<body style="width: 100%;height: 100%;">
+    <div class="col gradient-col">
+        <div class="logo">
+            <img src="assets/img/logo.png" class="logo-img" alt="Logo">
+        </div>
+
+        <div class="button-container">
+            <div class="nav-links">
+                <a href="{% url 'index' %}">Домой</a>
+            </div>        
+        </div>
+        
+
+        <p class="header-title">Онлайн запись в городе Екатеринбург</p>
+        
+        <div>
+            <img src="assets/img/tochki.png" class="dots-img">
+        </div>
+
+        <div>
+            <img src="assets/img/tochki.png" class="dots-img2">
+        </div>
+
+        <div>
+            <img src="assets/img/tochki2.png" class="dots-img5">
+            <img src="assets/img/tochki2.png" class="dots-img6">
+        </div>
+
+        <div>
+            <img src="assets/img/krug.png" class="circle-img1">
+            <img src="assets/img/krug.png" class="circle-img2">
+        </div>
+
+    </div>
+    
+    <div class="container">
+        <h2 style=" padding-top: 20px ;  margin-left: -20px;">Вход</h2>
+        <form method="post">
+            <input type="hidden" name="csrfmiddlewaretoken" value="y6kXJjkpTUZ0lT29DXxekOI8bhUtdRv1EUfgcri6ELrFVghviRZR7DOlMgQVEzSW">
+            
+            <div class="form-group">
+                <label for="id_email">Email:</label>
+                <input type="email" name="email" class="validate" placeholder="Введите почту" maxlength="320" required="" id="id_email">
+            </div>
+            <div class="form-group">
+                <label for="id_password">Пароль:</label>
+                <input type="password" name="password" placeholder="Введите пароль" required="" id="id_password">
+            </div>
+            <button type="submit" class="btn">Войти</button>
+        </form>
+    </div>
+    </script>
+</body>
+
+</html>
